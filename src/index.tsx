@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
 import './index.css';
 import App from './App';
+import reducer from './reducer';
 import reportWebVitals from './reportWebVitals';
 
+// 创建store
+const store = createStore(reducer);
+
 ReactDOM.render(
-  <React.StrictMode>
+  // 2、然后使用react-redux的Provider将props与容器连通起来
+  <Provider store={store} >
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
