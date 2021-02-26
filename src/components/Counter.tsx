@@ -1,6 +1,5 @@
 import React from 'react';
  
- 
 // 创建类型接口
 export interface IProps {
     value: number,
@@ -10,7 +9,7 @@ export interface IProps {
  
 // 使用接口代替 PropTypes 进行类型校验
 export default class Counter extends React.PureComponent<IProps> {
-  public render() {
+  render() {
     const { value, onIncrement, onDecrement } = this.props;
     return (
       <p>

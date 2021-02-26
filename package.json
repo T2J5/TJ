@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "TJ",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,12 +11,18 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.16",
+    "antd": "^4.12.3",
+    "classnames": "^2.2.6",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^5.1.1",
+    "lint-staged": "^10.5.4",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
+    "source-map-explorer": "^2.5.2",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
@@ -24,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "browserslist": {
     "production": [
@@ -39,12 +46,26 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.13.5",
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
+    "babel-plugin-import": "^1.13.3",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
+    "mocker-api": "^2.8.1",
     "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
