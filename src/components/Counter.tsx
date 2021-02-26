@@ -13,7 +13,7 @@ export default class Counter extends React.PureComponent<IProps> {
     const { value, onIncrement, onDecrement } = this.props;
     return (
       <p>
-        Clicked: { value } times
+        Clicked by who: { value } times
         <br />
         <br />
         <button onClick={ onIncrement } style={{ marginRight: 20 }}> +  </button>
